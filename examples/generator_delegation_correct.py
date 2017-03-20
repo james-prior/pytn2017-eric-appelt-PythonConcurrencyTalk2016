@@ -23,8 +23,7 @@ def footrace():
     The footrace generator will start over if it is sent
     a string 'fault'
     """
-    started = False
-    while not started:
+    while True:
         status = yield 'On your marks.'
         if status == 'fault':
             continue
@@ -32,4 +31,4 @@ def footrace():
         if status == 'fault':
             continue
         yield 'Go!'
-        started = True
+        break

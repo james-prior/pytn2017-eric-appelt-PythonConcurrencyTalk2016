@@ -27,9 +27,8 @@ def footrace():
     a string 'fault'. Keeps track of faults and reutrns the
     total.
     """
-    started = False
     faults = 0
-    while not started:
+    while True:
         status = yield 'On your marks.'
         if status == 'fault':
             faults = faults + 1
@@ -39,6 +38,6 @@ def footrace():
             faults = faults + 1
             continue
         yield 'Go!'
-        started = True
+        break
 
     return faults
